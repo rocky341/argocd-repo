@@ -6,20 +6,20 @@ serviceAccounts:
     create: true
     name:
 
-rest:
+gaas-rest:
   enabled: true
   replicaCount: 1
   image:
     #Set the repository value below to your own
-    repository: DOCKER_USERNAME/GAAS-REST-IMAGE_NAME
+    repository: rocky341/rest29apr
     pullPolicy: Always
     tag: latest
-    containerPort: 8080
+    containerPort: 8081
   imagePullSecrets: [ ]
   service:
     type: ClusterIP
-    port: 8080
-    targetPort: 8080
+    port: 8081
+    targetPort: 8081
   controller:
     applicationProperties:
       worker.image:  DOCKER_USERNAME/gaffer-worker
@@ -30,13 +30,17 @@ rest:
       name: gaffer-workers
 
   namespace: kai-dev
+  eureka:
+    image: myrepo/eureka-img
+  sidecar:
+    image: myrepo/sidecar-img
 
-ui:
+gaas-ui:
   enabled: true
   replicaCount: 1
   image:
     #Ask about repository setting
-    repository: DOCKER_USERNAME/GAAS-UI-IMAGE_NAME
+    repository: rocky341/april29ui
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: 'latest'
@@ -55,10 +59,10 @@ ui:
   envConfigFile: "env-config.js"
 
   envVariables:
-    reactAPIPlatform: ""
-    kaiRestAPIHost: "https://[HELM_INSTALL_NAME]-gaas-rest-[NAMESPACE].[INGRESS]"
+    reactAPIPlatform: "test"
+    kaiRestAPIHost: "https://mydeployment-gaas-rest-kai-dev.korat-cluster-7c309b11fc78649918d0c8b91bcb5925-0000.eu-gb.containers.appdomain.cloud/gaas-rest-service"
     cognitoUserpoolID: ""
     cognitoClientID: ""
-    reactAuthEndpoint: "https://[HELM_INSTALL_NAME]-gaas-rest-[NAMESPACE].[INGRESS]"
+    reactAuthEndpoint: "https://mydeployment-gaas-rest-kai-dev.korat-cluster-7c309b11fc78649918d0c8b91bcb5925-0000.eu-gb.containers.appdomain.cloud/gaas-sidecar-service"
     reactCognitoScope: "&scope=aws.cognito.signin.user.admin+email+openid+phone+profile+gaas-rest-resource/graphs"
     reactCognitoRedirectURI: ""
