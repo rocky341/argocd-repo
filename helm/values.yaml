@@ -11,7 +11,7 @@ gaas-rest:
   replicaCount: 1
   image:
     #Set the repository value below to your own
-    repository: rocky341/rest29apr
+    repository: DOCKER_USERNAME/gaas-rest
     pullPolicy: Always
     tag: latest
     containerPort: 8081
@@ -40,7 +40,7 @@ gaas-ui:
   replicaCount: 1
   image:
     #Ask about repository setting
-    repository: rocky341/april29ui
+    repository: DOCKER_USERNAME/gaas-ui
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: 'latest'
@@ -59,10 +59,10 @@ gaas-ui:
   envConfigFile: "env-config.js"
 
   envVariables:
-    reactAPIPlatform: "test"
-    kaiRestAPIHost: "https://mydeployment-gaas-rest-kai-dev.korat-cluster-7c309b11fc78649918d0c8b91bcb5925-0000.eu-gb.containers.appdomain.cloud/gaas-rest-service"
+    reactAPIPlatform: ""
+    kaiRestAPIHost: ""
     cognitoUserpoolID: ""
     cognitoClientID: ""
-    reactAuthEndpoint: "https://mydeployment-gaas-rest-kai-dev.korat-cluster-7c309b11fc78649918d0c8b91bcb5925-0000.eu-gb.containers.appdomain.cloud/gaas-sidecar-service"
+    reactAuthEndpoint: ""
     reactCognitoScope: "&scope=aws.cognito.signin.user.admin+email+openid+phone+profile+gaas-rest-resource/graphs"
     reactCognitoRedirectURI: ""
