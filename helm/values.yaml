@@ -60,9 +60,9 @@ gaas-ui:
 
   envVariables:
     reactAPIPlatform: ""
-    kaiRestAPIHost: ""
+    kaiRestAPIHost: "https://[HELM_INSTALL_NAME]-gaas-rest-[NAMESPACE].[INGRESS]"
     cognitoUserpoolID: ""
     cognitoClientID: ""
-    reactAuthEndpoint: ""
+    reactAuthEndpoint: "https://[HELM_INSTALL_NAME]-gaas-rest-[NAMESPACE].[INGRESS]"
     reactCognitoScope: "&scope=aws.cognito.signin.user.admin+email+openid+phone+profile+gaas-rest-resource/graphs"
     reactCognitoRedirectURI: ""
