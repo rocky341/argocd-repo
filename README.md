@@ -9,7 +9,7 @@
 <img width="814" alt="Screenshot 2022-05-09 at 8 35 55 am" src="https://user-images.githubusercontent.com/60354187/167362269-520e289f-0db9-4ba2-b2de-48af75c5c396.png">
 
 * Fil out destination details using name and select the default in-cluster value. Set the namespace to where you'd like to deploy to.
-* 
+
 <img width="818" alt="Screenshot 2022-05-09 at 8 36 49 am" src="https://user-images.githubusercontent.com/60354187/167362403-b0316c55-88ee-4837-8efc-2b3445f237c6.png">
 
 * Click create, even when the section at the bottom is set to directory but nothing is being picked up
