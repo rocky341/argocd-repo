@@ -12,7 +12,7 @@
 
 <img width="818" alt="Screenshot 2022-05-09 at 8 36 49 am" src="https://user-images.githubusercontent.com/60354187/167362403-b0316c55-88ee-4837-8efc-2b3445f237c6.png">
 
-* Click create, even when the section at the bottom is set to directory but nothing is being picked up
+* Click create, even when the section at the bottom is set to directory but no helm chart is being picked up
 * Once it starts creating, you can click `App Details`, in the `Parameters` section add in the overides by clicking `Edit` and `Save`:
   * gaas-rest.controller.applicationProperties.worker.image
   * gaas-rest.eureka.image
